@@ -21,6 +21,7 @@
     text-align: center;
   }
 
+  
   h1 {
     font-family: 'Cinzel', serif;
     font-weight: 700;
@@ -63,16 +64,25 @@
  background: #d4af37;
       color: #12110d;
   }
-  .logo {
-
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 5px #d4af37); /* légère ombre dorée autour */
+.logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 350px;
-  max-width: 350px;
-  border-radius: 5px;
+  margin: 0 auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 6px #d4af37);
+}
+.nav-links a {
+  color: #d4af37;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #fff7d0;
 }
 </style>
 </head>
@@ -80,11 +90,11 @@
       <img src="https://nagashud.github.io/SkynetLina/Recall/Autres/34H-uyH4.jpg" alt="The Art of Dark Crafting Logo" class="logo" />
   <h1>The Art of Dark Crafting</h1>
   <p>Gothic craft supplies &amp; antique-inspired stationery. Curated for the elegant soul who writes on aged parchment with rusty nibs.</p>
-  <div class="buttons">
-    <a href="shop.html" class="btn" role="button">Shop</a>
-    <button class="btn">About</button>
-    <button class="btn">Contact</button>
-  </div>
+<nav class="nav-links">
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
 </body>
 </html>
