@@ -3,97 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Art of Dark Crafting - Shop</title>
+  <title>Shop – The Art of Dark Crafting</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
     body {
-      margin: 0; padding: 0;
-      background: #12110d;
+      margin: 0;
+      background-color: #0d0a06;
+      background-image: radial-gradient(circle at top, #2d2410 0%, #0d0a06 100%);
+      font-family: 'Playfair Display', serif;
       color: #d4af37;
-      font-family: 'Georgia', serif;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      height: 100vh;
     }
 
     header {
-      background: #1e1b17;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      box-shadow: 0 2px 5px #000a;
-    }
-    header button {
-      background: #d4af37;
-      border: none;
-      padding: 0.5rem 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-radius: 4px;
-      color: #12110d;
-      text-transform: uppercase;
-    }
-    header button:hover {
-      background: #b28820;
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 0 5px #d4af37;
     }
 
-    .container {
-      flex: 1;
+    .nav-container {
       display: flex;
-      overflow: hidden;
-    }
-
-    nav {
-      width: 220px;
-      background: #1e1b17;
+      justify-content: center;
+      gap: 2rem;
       padding: 1rem;
-      box-shadow: inset -3px 0 6px #0008;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #d4af37;
+      font-weight: 600;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff3d0;
+      border-bottom: 1px solid #fff3d0;
+    }
+
+    .main {
+      display: flex;
+      flex: 1;
+      border-top: 1px solid #d4af37;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: rgba(20, 17, 15, 0.5);
+      padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      box-shadow: inset -4px 0 6px #0008;
     }
 
-    nav button {
-      background: transparent;
-      border: 1px solid #d4af37;
+    .sidebar a {
       color: #d4af37;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      text-align: left;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
-    nav button:hover {
-      background: #d4af37;
-      color: #12110d;
+
+    .sidebar a:hover {
+      color: #fff3d0;
     }
 
     iframe {
       flex: 1;
       border: none;
-      background: #12110d;
-      box-shadow: inset 2px 0 5px #0008;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: inset 2px 0 6px #0008;
     }
   </style>
 </head>
 <body>
-  <header>
-    
-    <button onclick="loadPage('items.html')">Shop</button>
-    <button onclick="loadPage('contact.html')">Contact</button>
-  </header>
 
-  <div class="container">
-    <nav>
-      <button onclick="loadItems('Jewelry_making')">Jewelry Making</button>
-      <button onclick="loadItems('outils')">Textile Arts</button>
-      <button onclick="loadItems('fournitures')">Gothic Alphabet Stickers</button>
-       <button onclick="loadItems('fournitures')">Decorative Paper</button>
-        <button onclick="loadItems('fournitures')">...</button>
-    </nav>
+  <header>The Art of Dark</header>
 
-    <iframe id="contentFrame" src="items.html?cat=papeterie" title="Shop content"></iframe>
+  <div class="nav-container">
+    <a class="nav-link" href="#" onclick="loadPage('items.html')">Shop</a>
+    <a class="nav-link" href="#" onclick="loadPage('contact.html')">Contact</a>
+  </div>
+
+  <div class="main">
+    <aside class="sidebar">
+      <a href="#" onclick="loadItems('Jewelry_making')">Jewelry Making</a>
+      <a href="#" onclick="loadItems('outils')">Textile Arts</a>
+      <a href="#" onclick="loadItems('stickers')">Gothic Alphabet Stickers</a>
+      <a href="#" onclick="loadItems('paper')">Decorative Paper</a>
+      <a href="#" onclick="loadItems('archives')">Archives</a>
+    </aside>
+
+    <iframe id="contentFrame" src="items.html?cat=papeterie"></iframe>
   </div>
 
   <script>
@@ -104,5 +111,6 @@
       document.getElementById('contentFrame').src = 'items.html?cat=' + category;
     }
   </script>
+
 </body>
 </html>
