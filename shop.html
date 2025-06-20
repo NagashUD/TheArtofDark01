@@ -16,6 +16,11 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+          background: url('images/dark_academia gothic_bookshelf_background.jpg')  ;
+               background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     }
 
 header {
@@ -27,6 +32,8 @@ header {
   letter-spacing: 2px;
   text-shadow: 0 0 5px #d4af37;
   border-bottom: 1px solid #d4af37;
+
+  
 }
 
     .nav-container {
@@ -34,9 +41,10 @@ header {
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
-        background: transparent; /* Supprime toute couleur de fond */
+
   box-shadow: none;        /* Au cas où un ombrage serait appliqué */
   border: none;       
+  
     }
 
 .nav-link {
@@ -108,13 +116,7 @@ header {
       <a href="#" onclick="loadItems('paper')">Decorative Paper</a>
       <a href="#" onclick="loadItems('archives')">Stickers</a>
     </aside>
-        <aside class="sidebar">
-      <a href="#" onclick="loadItems('Jewelry_making')">SHOP FAVORITES</a>
-      <a href="#" onclick="loadItems('outils')">Textile Arts</a>
-      <a href="#" onclick="loadItems('stickers')">Gothic Alphabet Stickers</a>
-      <a href="#" onclick="loadItems('paper')">Decorative Paper</a>
-      <a href="#" onclick="loadItems('archives')">Stickers</a>
-    </aside>
+    
 
     <iframe id="contentFrame" src="items.html?cat=papeterie"></iframe>
   </div>
