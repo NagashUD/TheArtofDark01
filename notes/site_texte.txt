@@ -104,3 +104,21 @@ info@mysite.com
 
 <right>
 Instagram       TikTok
+
+
+
+
+Logo : cercle
+centered in page verticaly, right ?
+TheArtofDark
+not necessarily.  maybe off to the right
+TheArtofDark
+depends on the background
+TheArtofDark
+i just want it to be pretty.
+
+
+TheArtofDark
+change the buttons to where they dont look like buttons. no border.
+TheArtofDark
+just words

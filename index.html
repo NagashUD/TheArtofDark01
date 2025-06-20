@@ -6,12 +6,18 @@
 <title>The Art of Dark Crafting</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Libre+Baskerville&display=swap" rel="stylesheet" />
 <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
   body {
     margin: 0;
     background: #0d0a06; /* noir très profond */
-    background-image: radial-gradient(circle at center, #3a2e0f 0%, #0d0a06 80%);
+      background: url('images/_Dark academia gothic bookshelf background_ ornate antique.jpg') fixed ;
+        background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     color: #d4af37; /* doré classique */
-    font-family: 'Libre Baskerville', serif;
+
+    font-family: 'Playfair Display', serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -23,7 +29,6 @@
 
   
   h1 {
-    font-family: 'Cinzel', serif;
     font-weight: 700;
     font-size: 3.5rem;
     margin-bottom: 0.2em;
@@ -46,6 +51,7 @@
     gap: 1.2rem;
     justify-content: center;
     flex-wrap: wrap;
+
   }
 
   .btn {
@@ -58,6 +64,7 @@
       text-align: left;
       font-weight: 600;
       transition: background-color 0.3s ease;
+      
   }
 
   .btn:hover {
@@ -80,6 +87,7 @@
   text-decoration: none;
   margin: 0 1rem;
   transition: color 0.3s ease;
+  
 }
 .nav-links a:hover {
   color: #fff7d0;
