@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Art of Dark Crafting - Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #12110d;
+      color: #d4af37;
+      font-family: 'Georgia', serif;
+      margin: 2rem;
+         background: url('images/fancy-cushion.webp') repeat ;
+    }
+
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-shadow: 0 0 5px #d4af37;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 2rem;
+      max-width: 1200px;
+ 
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #1e1b17;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #6f5e2e88;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+           max-height: 450px;
+                max-width: 300px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #d4af37;
+    }
+
+    .card img {
+      max-width: 100%;
+      max-height: 50%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+       box-shadow: 0 0 15px #6f5e2ead;
+ 
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #c9b77d;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #f2c94c;
+    }
+
+    .btn {
+      background-color: #d4af37;
+      border: none;
+      border-radius: 5px;
+      color: #12110d;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn:hover {
+      background-color: #b28820;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shop - The Art of Dark Crafting</h1>
+  <section class="products">
+    <article class="card">
+      <img src="images/colored_teeth.jpg" alt="colored_teeth" />
+      <h2>Colored teeth</h2>
+      <p>Multi colored teeth</p>
+      <div class="price">€24.00</div>
+      <button class="btn">Add to cart</button>
+    </article>
+
+    <article class="card">
+      <img src="images/dusty-parchment.jpg" alt="Dusty Parchment" />
+      <h2>Gothic Alphabet Stickers</h2>
+      <p>Gothic Alphabet Stickers.</p>
+      <div class="price">€15.00</div>
+      <button class="btn">Add to cart</button>
+    </article>
+
+    <article class="card">
+      <img src="images/rusty-nibs.jpg" alt="Rusty Nibs" />
+      <h2>Rusty Nibs</h2>
+      <p>Set of nibs with antique finish, ideal for calligraphy and gothic lettering.</p>
+      <div class="price">€9.50</div>
+      <button class="btn">Add to cart</button>
+    </article>
+
+        <article class="card">
+      <img src="images/rusty-nibs.jpg" alt="Rusty Nibs" />
+      <h2>Rusty Nibs</h2>
+      <p>Set of nibs with antique finish, ideal for calligraphy and gothic lettering.</p>
+      <div class="price">€9.50</div>
+      <button class="btn">Add to cart</button>
+    </article>
+  </section>
+</body>
+</html>

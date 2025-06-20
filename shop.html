@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Art of Dark Crafting - Shop</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      background: #12110d;
+      color: #d4af37;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      background: #1e1b17;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 2px 5px #000a;
+    }
+    header button {
+      background: #d4af37;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      color: #12110d;
+      text-transform: uppercase;
+    }
+    header button:hover {
+      background: #b28820;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    nav {
+      width: 220px;
+      background: #1e1b17;
+      padding: 1rem;
+      box-shadow: inset -3px 0 6px #0008;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    nav button {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      text-align: left;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    nav button:hover {
+      background: #d4af37;
+      color: #12110d;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      background: #12110d;
+      box-shadow: inset 2px 0 5px #0008;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button onclick="loadPage('index.html')">Home</button>
+    <button onclick="loadPage('items.html')">Shop</button>
+    <button onclick="loadPage('contact.html')">Contact</button>
+  </header>
+
+  <div class="container">
+    <nav>
+      <button onclick="loadItems('papeterie')">Papeterie</button>
+      <button onclick="loadItems('outils')">Outils</button>
+      <button onclick="loadItems('fournitures')">Fournitures</button>
+    </nav>
+
+    <iframe id="contentFrame" src="items.html?cat=papeterie" title="Shop content"></iframe>
+  </div>
+
+  <script>
+    function loadPage(page) {
+      document.getElementById('contentFrame').src = page;
+    }
+    function loadItems(category) {
+      document.getElementById('contentFrame').src = 'items.html?cat=' + category;
+    }
+  </script>
+</body>
+</html>

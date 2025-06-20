@@ -1,0 +1,106 @@
+<en-tête>
+craft supplies for the dark at heart
+
+<Store categories> 
+<departments>
+
+<button>
+<left>
+Jewelry Making
+<right>
+Textile Arts
+
+<departments2>
+<button>
+<left>
+Decorative Paper
+<right>
+Stickers
+
+<shop favorites>
+SHOP FAVORITES
+
+Gothic Alphabet Stickers
+$10.00
+add to cart button
+
+Witchy Potion Stickers
+$12.00
+add to cart button
+
+Antique Drawer Pulls
+$40.00
+add to cart button
+
+Victorian Furniture Hardware
+$50.00
+add to cart button
+
+<promotional frame>
+<items>
+button Shop Now
+
+<SHOP OFFERS categories>
+
+Gothic Alphabet Stickers
+$10.00
+add to cart button
+
+Witchy Potion Stickers
+$12.00
+add to cart button
+
+Antique Drawer Pulls
+$40.00
+add to cart button
+
+Victorian Furniture Hardware
+$50.00
+add to cart button
+
+
+<Footer>
+<left>
+OUR NEWSLETTER
+Subscribe to our newsletter to receive special offers and updates on new products
+
+<formulaire d'abonnement>
+*Email
+
+Subscribe button
+
+Thanks for submitting:
+
+<right1>
+Shop
+
+Shop Professional Art
+
+Shop Kids Art
+
+Shipping & Returns 
+
+Store Policy 
+
+Payment Methods 
+
+FAQ
+
+<right2>
+Contact 
+
+500 Terry Francine Street
+
+San Francisco, CA 94158
+
+
+info@mysite.com
+
+123-456-7890
+
+<footer band>
+<left>
+© 2024 by The Art of Dark. 
+
+<right>
+Instagram       TikTok
