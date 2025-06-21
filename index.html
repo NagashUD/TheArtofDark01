@@ -12,9 +12,7 @@ body {
   font-family: 'Playfair Display', serif;
   color: #cfc6b8;
   background: #0e0d0c url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
-  
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,21 +25,21 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 70%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 70%);
   z-index: -1;
   pointer-events: none;
 }
 
 h1 {
   font-weight: 700;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   margin-bottom: 0.2em;
   color: #d3c693;
   text-shadow: 0 0 5px #000;
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   max-width: 650px;
   margin-bottom: 2rem;
   color: #e5dfd2;
@@ -50,42 +48,18 @@ p {
 
 .logo {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
   border-radius: 50%;
   filter: drop-shadow(0 0 5px #bca36f);
-}
-
-.buttons {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  background: transparent;
-  border: 1px solid #bca36f;
-  color: #bca36f;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  font-family: 'Playfair Display', serif;
-}
-
-.btn:hover {
-  background: #bca36f;
-  color: #12110d;
 }
 
 .nav-links {
   font-family: 'Playfair Display', serif;
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   justify-content: center;
   margin-top: 2rem;
   flex-wrap: wrap;
@@ -93,65 +67,64 @@ p {
 
 .nav-links a {
   color: #bca36f;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-decoration: none;
-  padding: 0.7rem 1.4rem;
-  border: 1px solid #bca36f;
-  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  background: #bca36f;
-  color: #12110d;
+  border-bottom: 1px solid #bca36f;
+  color: #e5dfd2;
 }
 
-.subscribe-floating {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background: rgba(20, 18, 15, 0.9);
-  padding: 1rem;
-  border: 1px solid #bca36f;
-  border-radius: 6px;
-  z-index: 9999;
-}
-
-.subscribe-floating input,
-.subscribe-floating button {
-  margin-top: 0.5rem;
-}
-
-button[type="submit"] {
-  background-color: transparent;
-  border: 1px solid #bca36f;
-  color: #bca36f;
-  padding: 0.5rem 1rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #bca36f;
-  color: #12110d;
-  box-shadow: 0 0 8px #bca36f88;
-}
 .site-footer {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   background: rgba(13, 10, 6, 0.9);
   color: #bfae8b;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border-top: 1px solid #3e362a;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
   margin-top: auto;
-  width: 20%;
+  width: 100%;
 }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  body {
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .logo {
+    max-width: 280px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .site-footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0.5rem;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -167,16 +140,7 @@ button[type="submit"]:hover {
 </nav>
 
 
-<footer>
-<div class="subscribe-floating">
-  <form onsubmit="event.preventDefault(); showThanks();">
-    <label style="color:#bca36f;">Subscribe:</label><br>
-    <input type="email" placeholder="Enter your email" required />
-    <button type="submit">Subscribe</button>
-    <p id="thanks-message" style="display:none; color: #f0e8d8;">Thanks for submitting!</p>
-  </form>
-</div>
-</footer>
+
 <footer class="site-footer">
   © 2025 The Art of Dark — All rights reserved.
 </footer>
