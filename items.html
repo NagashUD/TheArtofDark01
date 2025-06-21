@@ -3,33 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Art of Dark Crafting - Shop</title>
+  <title>The Art of Dark - Shop</title>
 
   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
     body {
       background-color: #12110d;
       color: #d4af37;
       font-family: 'Georgia', serif;
       margin: 2rem;
-         background: url('images/Dark academia gothic bookshelf background.jpg')  ;
+         background: url('images/wc2.jpg')  ;
                background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+     font-family: 'Playfair Display', serif;
 
     }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(255, 235, 180, 0.08), rgba(0, 0, 0, 0.6));
 
+  pointer-events: none;
+  transition: all 10s ease-in-out;
+}
 
     h1 {
+         font-family: 'Playfair Display', serif;
       text-align: center;
       margin-bottom: 2rem;
       font-weight: 700;
       font-size: 2.5rem;
       text-shadow: 0 0 5px #d4af37;
-          font-family: 'Playfair Display', serif;
+      
     }
 
     .products {
+         font-family: 'Playfair Display', serif;
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
       gap: 2rem;
@@ -39,6 +55,7 @@
     }
 
     .card {
+      
       background: #1e1b17;
       border-radius: 10px;
       box-shadow: 0 0 10px #6f5e2e88;
@@ -65,6 +82,7 @@
     }
 
     .card h2 {
+         font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
       margin: 0.5rem 0;
     }
@@ -74,9 +92,11 @@
       color: #c9b77d;
       text-align: center;
       flex-grow: 1;
+         font-family: 'Playfair Display', serif;
     }
 
     .price {
+         font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 1.2rem;
       margin: 1rem 0;
@@ -101,7 +121,7 @@
   </style>
 </head>
 <body>
-  <h1>Shop - The Art of Dark</h1>
+  <h1>The Art of Dark</h1>
   <section class="products">
     <article class="card">
       <img src="images/colored_teeth.jpg" alt="colored_teeth" />
