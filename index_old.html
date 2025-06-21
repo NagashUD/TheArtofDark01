@@ -25,7 +25,7 @@ height: 100%;
     justify-content: center;
     padding: 2rem;
     text-align: center;
-              background: url('images/wc1.jpg')  ;
+              background: url('images/main_background.jpg')  ;
                background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,11 +40,48 @@ body::before {
   height: 100%;
   z-index: -1;
   background: radial-gradient(circle at center, rgba(255, 235, 180, 0.08), rgba(0, 0, 0, 0.6));
-
+  animation: ambientCycle 60s ease-in-out infinite;
   pointer-events: none;
-
+  transition: all 10s ease-in-out;
 }
-
+@keyframes ambientCycle {
+  0% {
+    background: radial-gradient(circle at center, rgba(255, 235, 180, 0.08), rgba(0, 0, 0, 0.6));
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  12.5% {
+    background: radial-gradient(circle at center, rgba(255, 225, 160, 0.10), rgba(10, 5, 3, 0.65));
+    filter: hue-rotate(-5deg) brightness(1.05);
+  }
+  25% {
+    background: radial-gradient(circle at center, rgba(255, 210, 140, 0.11), rgba(20, 10, 5, 0.7));
+    filter: hue-rotate(-10deg) brightness(1.1);
+  }
+  37.5% {
+    background: radial-gradient(circle at center, rgba(180, 150, 120, 0.10), rgba(10, 10, 15, 0.72));
+    filter: hue-rotate(10deg) brightness(1);
+  }
+  50% {
+    background: radial-gradient(circle at center, rgba(100, 130, 200, 0.12), rgba(0, 0, 20, 0.8));
+    filter: hue-rotate(30deg) brightness(0.85);
+  }
+  62.5% {
+    background: radial-gradient(circle at center, rgba(130, 100, 150, 0.11), rgba(10, 5, 15, 0.75));
+    filter: hue-rotate(15deg) brightness(0.95);
+  }
+  75% {
+    background: radial-gradient(circle at center, rgba(180, 120, 60, 0.10), rgba(15, 10, 5, 0.65));
+    filter: hue-rotate(-10deg) brightness(1.05);
+  }
+  87.5% {
+    background: radial-gradient(circle at center, rgba(240, 210, 160, 0.09), rgba(5, 0, 0, 0.6));
+    filter: hue-rotate(-5deg) brightness(1);
+  }
+  100% {
+    background: radial-gradient(circle at center, rgba(255, 235, 180, 0.08), rgba(0, 0, 0, 0.6));
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
 
   h1 {
     font-weight: 700;

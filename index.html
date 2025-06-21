@@ -7,95 +7,82 @@
 
 <style>
  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
-  body {
-    margin: 0;
-    background: #0d0a06; /* noir très profond */
-          background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-    color: #d4af37; /* doré classique */
-height: 100%;
- overflow: hidden; /* PLUS d’ascenseur vertical */
-    font-family: 'Playfair Display', serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-              background: url('images/bg_b_n_w.jpg')  ;
-               background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  }
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: #cfc6b8;
+  background: #0e0d0c url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 60%);
+  background: linear-gradient(to bottom, rgba(12, 11, 10, 0.3), rgba(10, 9, 8, 0.85));
   z-index: -1;
   pointer-events: none;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  margin-bottom: 0.2em;
+  color: #d3c693;
+  text-shadow: 0 0 5px #000;
+}
 
-  h1 {
-    font-weight: 700;
-    font-size: 3.5rem;
-    margin-bottom: 0.2em;
-    text-shadow:
-      0 0 5px #d4af37,
-      0 0 10px #d4af37;
-    
-  }
+p {
+  font-size: 1.3rem;
+  max-width: 650px;
+  margin-bottom: 2rem;
+  color: #e5dfd2;
+  text-shadow: 0 0 3px #000;
+}
 
-  p {
-    font-size: 1.3rem;
-    max-width: 650px;
-    margin-bottom: 2rem;
-    color: #f0e8d8;
-    text-shadow: 0 0 3px #000;
-  }
-
-  .buttons {
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-
-  }
-
-  .btn {
-      background: transparent;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      text-align: left;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-          font-family: 'Playfair Display', serif;
-      
-  }
-
-  .btn:hover {
- background: #d4af37;
-      color: #12110d;
-  }
 .logo {
   width: 100%;
   max-width: 500px;
   height: auto;
   display: block;
   margin: 0 auto;
-  filter: drop-shadow(0 0 5px #d4af37);
   border-radius: 50%;
+  filter: drop-shadow(0 0 5px #bca36f);
 }
+
+.buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid #bca36f;
+  color: #bca36f;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.btn:hover {
+  background: #bca36f;
+  color: #12110d;
+}
+
 .nav-links {
-      font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
   display: flex;
   gap: 2.5rem;
   justify-content: center;
@@ -104,20 +91,54 @@ body::before {
 }
 
 .nav-links a {
-      font-family: 'Playfair Display', serif;
-  color: #d4af37;
-
-  font-size: 1.5rem;
+  color: #bca36f;
+  font-size: 1.4rem;
   text-decoration: none;
   padding: 0.7rem 1.4rem;
-  border: 1px solid #d4af37;
+  border: 1px solid #bca36f;
   border-radius: 6px;
   transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  background: #d4af37;
+  background: #bca36f;
   color: #12110d;
+}
+
+.subscribe-floating {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(20, 18, 15, 0.9);
+  padding: 1rem;
+  border: 1px solid #bca36f;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+.subscribe-floating input,
+.subscribe-floating button {
+  margin-top: 0.5rem;
+}
+
+button[type="submit"] {
+  background-color: transparent;
+  border: 1px solid #bca36f;
+  color: #bca36f;
+  padding: 0.5rem 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #bca36f;
+  color: #12110d;
+  box-shadow: 0 0 8px #bca36f88;
 }
 
 </style>
@@ -135,7 +156,16 @@ body::before {
 </nav>
 
 
-
+<footer>
+<div class="subscribe-floating">
+  <form onsubmit="event.preventDefault(); showThanks();">
+    <label style="color:#bca36f;">Subscribe:</label><br>
+    <input type="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
+    <p id="thanks-message" style="display:none; color: #f0e8d8;">Thanks for submitting!</p>
+  </form>
+</div>
+</footer>
 </body>
 
 </html>
