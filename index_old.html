@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Art of Dark Crafting</title>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+  body {
+    margin: 0;
+    background: #0d0a06; /* noir très profond */
+          background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+    color: #d4af37; /* doré classique */
+height: 100%;
+ overflow: hidden; /* PLUS d’ascenseur vertical */
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+              background: url('images/wc1.jpg')  ;
+               background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(255, 235, 180, 0.08), rgba(0, 0, 0, 0.6));
+
+  pointer-events: none;
+
+}
+
+
+  h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 0.2em;
+    text-shadow:
+      0 0 5px #d4af37,
+      0 0 10px #d4af37;
+    
+  }
+h1::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(0,0,0,0.6) 0%, transparent 80%);
+  z-index: -1;
+  border-radius: 8px; /* optionnel, arrondir un peu le fond */
+}
+  p {
+    font-size: 1.3rem;
+    max-width: 650px;
+    margin-bottom: 2rem;
+    color: #f0e8d8;
+    text-shadow: 0 0 3px #000;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+
+  .btn {
+      background: transparent;
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      text-align: left;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      
+  }
+
+  .btn:hover {
+ background: #d4af37;
+      color: #12110d;
+  }
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 6px #d4af37);
+   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.596);
+}
+.nav-links a {
+  color: #d4af37;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+  
+}
+.nav-links a:hover {
+  color: #fff7d0;
+}
+ .audio-player {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #12110d;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px #a67c00;
+    width: fit-content;
+    user-select: none;
+    font-family: 'Libre Baskerville', serif;
+    color: #d4af37;
+  }
+  #playPauseBtn {
+    font-size: 1.5rem;
+    background: none;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  #playPauseBtn:hover {
+    background-color: #d4af37;
+    color: #12110d;
+  }
+  #timeDisplay {
+    min-width: 35px;
+    font-weight: 600;
+    text-shadow: 0 0 3px #a67c00;
+  }
+  footer {
+  background-color: #1e1b17;
+  color: #d4af37;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  box-shadow: inset 0 1px 3px #0008;
+  user-select: none;
+}
+.page-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* espace entre header/main/audio/footer */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+ #rain {
+    pointer-events: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  /* Chaque goutte */
+  .drop {
+    position: absolute;
+    bottom: 100%;
+    width: 1px;
+    height: 15px;
+    background: linear-gradient(white, transparent);
+    opacity: 0.2;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="rain"></div>
+
+      <img src="images/34H-uyH4.jpg" alt="The Art of Dark Crafting Logo" class="logo" />
+  <h1>The Art of Dark</h1>
+  <p>Gothic craft supplies for the dark at heart</p>
+<nav class="nav-links">
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+  <div class="page-wrapper"></div>
+<div class="audio-player">
+  <audio id="audio" src="audio/extract-of-sweetness-dark-piano-track.mp3"></audio>
+  <button id="playPauseBtn" aria-label="Play/Pause">
+    ▶
+  </button>
+  <span id="timeDisplay">0:00</span>
+</div>
+<footer>
+  Extract of "Sweetness dark" Piano track.<br />
+  By Frankumjay.
+</footer>
+  </div>
+<script>
+
+  const audio = document.getElementById('audio');
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const timeDisplay = document.getElementById('timeDisplay');
+
+  function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' + secs : secs}`;
+  }
+
+  playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playPauseBtn.textContent = '⏸';
+    } else {
+      audio.pause();
+      playPauseBtn.textContent = '▶';
+    }
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    timeDisplay.textContent = formatTime(audio.currentTime);
+  });
+
+  audio.addEventListener('ended', () => {
+    playPauseBtn.textContent = '▶';
+    timeDisplay.textContent = '0:00';
+  });
+
+const rainContainer = document.getElementById('rain');
+  const dropsCount = 150; // nombre de gouttes
+
+  function randomRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  for(let i = 0; i < dropsCount; i++) {
+    const drop = document.createElement('div');
+    drop.classList.add('drop');
+
+    // Position horizontale aléatoire
+    drop.style.left = `${Math.random() * 100}vw`;
+
+    // Taille aléatoire (épaisseur + hauteur)
+    const width = randomRange(1, 2);
+    const height = randomRange(10, 20);
+    drop.style.width = `${width}px`;
+    drop.style.height = `${height}px`;
+
+    // Opacité légèrement variable
+    drop.style.opacity = randomRange(0.1, 0.3);
+
+    // Durée de chute aléatoire (plus long = goutte lente)
+   const duration = randomRange(1.5, 3);
+    drop.style.animationDuration = `${duration}s`;
+const size = randomRange(1, 4); // largeur entre 2px et 5px
+drop.style.width = size + 'px';
+drop.style.height = (size * 5) + 'px';
+    // Délai d’animation aléatoire pour ne pas synchroniser les gouttes
+    drop.style.animationDelay = `${-Math.random() * duration}s`;
+
+    rainContainer.appendChild(drop);
+  }
+
+
+</script>
+
+</body>
+
+</html>

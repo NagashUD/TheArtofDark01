@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Art of Dark Crafting</title>
+<title>The Art of Dark</title>
 
 <style>
  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
   body {
     margin: 0;
     background: #0d0a06; /* noir très profond */
-           background: url('images/bg_b_n_w.jpg')  ;
           background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,20 +25,19 @@ height: 100%;
     justify-content: center;
     padding: 2rem;
     text-align: center;
-    
+              background: url('images/bg_b_n_w.jpg')  ;
+               background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   }
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 60%);
   z-index: -1;
-  background: radial-gradient(circle at center, rgba(255, 235, 180, 0.08), rgba(0, 0, 0, 0.6));
-
   pointer-events: none;
-
 }
 
 
@@ -52,18 +50,7 @@ body::before {
       0 0 10px #d4af37;
     
   }
-h1::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 110%;
-  height: 110%;
-  background: radial-gradient(circle, rgba(0,0,0,0.6) 0%, transparent 80%);
-  z-index: -1;
-  border-radius: 8px; /* optionnel, arrondir un peu le fond */
-}
+
   p {
     font-size: 1.3rem;
     max-width: 650px;
@@ -98,14 +85,13 @@ h1::before {
       color: #12110d;
   }
 .logo {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   display: block;
   margin: 0 auto;
-  width: 300px;
-  height: 300px;
+  filter: drop-shadow(0 0 5px #d4af37);
   border-radius: 50%;
-  object-fit: cover;
-  filter: drop-shadow(0 0 6px #d4af37);
-   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.596);
 }
 .nav-links a {
   color: #d4af37;
@@ -125,15 +111,14 @@ h1::before {
 <body>
 
 
-      <img src="images/34H-uyH4.jpg" alt="The Art of Dark Logo" class="logo" />
+      <img src="images/34H-uyH4.jpg" alt="The Art of Dark Crafting Logo" class="logo" />
   <h1>The Art of Dark</h1>
   <p>Gothic craft supplies for the dark at heart</p>
 <nav class="nav-links">
   <a href="shop.html">Shop</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="about.html">Inspiration</a>
+  <a href="contact.html">Events</a>
 </nav>
-
 
 
 
