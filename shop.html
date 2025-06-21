@@ -78,18 +78,17 @@
     flex-direction: column;
   }
 
-  .sidebar {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 1rem;
-    border-right: none;
-    border-bottom: 1px solid #3c372d;
-  }
+.sidebar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-right: none;
+  border-bottom: 1px solid #3c372d;
+}
 
   iframe {
     min-height: 60vh;
