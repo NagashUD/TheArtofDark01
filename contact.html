@@ -7,15 +7,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
 
-    body {
+body {
   margin: 0;
   background: #0d0a06 url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
   color: #e3d8ba;
   font-family: 'Playfair Display', serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 3rem 1rem;
   min-height: 100vh;
   text-align: center;
@@ -25,7 +21,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.85) 60%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -55,6 +51,7 @@ p.description {
   width: 100%;
   max-width: 500px;
   margin-bottom: 3rem;
+  text-align: center; /* ← Ajout ici */
 }
 
 .contact-info p {
@@ -123,28 +120,39 @@ button[type="submit"]:hover {
   background: #b28820;
   box-shadow: 0 0 8px #d4af37aa;
 }
+.contact-wrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
 
   </style>
 </head>
 <body>
+  <main class="contact-wrapper">
+    <h1>Contact Us</h1>
+    <p class="description">Have questions about our products or want to collaborate? We'd love to hear from you.</p>
 
-  <h1>Contact Us</h1>
-  <p class="description">Have questions about our products or want to collaborate? We'd love to hear from you.</p>
+    <div class="contact-info">
+      <p><span>Address</span>500 Terry Francine Street<br>San Francisco, CA 94158</p>
+      <p><span>Email</span><a href="mailto:info@mysite.com" style="color: #e3d8ba; text-decoration: none;">info@mysite.com</a></p>
+      <p><span>Phone</span>123-456-7890</p>
+    </div>
 
-  <div class="contact-info">
-    <p><span>Address</span>500 Terry Francine Street<br>San Francisco, CA 94158</p>
-    <p><span>Email</span><a href="mailto:info@mysite.com" style="color: #e3d8ba; text-decoration: none;">info@mysite.com</a></p>
-    <p><span>Phone</span>123-456-7890</p>
-  </div>
-  <div class="subscribe-form">
-    <p>Subscribe to receive updates & exclusive offers</p>
-    <form onsubmit="event.preventDefault(); showThanks();" autocomplete="off">
-      <input type="email" placeholder="Your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
-    <p id="thanks-message" style="display: none; color: #c8bca3; margin-top: 1rem;">Thanks for submitting!</p>
-  </div>
-
+    <div class="subscribe-form">
+      <p>Subscribe to receive updates & exclusive offers</p>
+      <form onsubmit="event.preventDefault(); showThanks();" autocomplete="off">
+        <input type="email" placeholder="Your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="thanks-message" style="display: none; color: #c8bca3; margin-top: 1rem;">Thanks for submitting!</p>
+    </div>
+  </main>
   
 </body>
 </html>
