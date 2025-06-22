@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart – The Art of Dark</title>
+
+  <!-- FontAwesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
+    body {
+      margin: 0;
+      background: #0d0a06 url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
+      color: #e3d8ba;
+      font-family: 'Playfair Display', serif;
+      padding: 3rem 1rem;
+      min-height: 100vh;
+      text-align: center;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #dfc75a;
+      text-shadow:
+        0 0 5px #dfc75a55,
+        0 0 10px #000;
+    }
+
+    .cart-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    .item-name {
+      flex: 1;
+      text-align: left;
+    }
+
+    .item-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .qty-btn {
+      background-color: transparent;
+      border: 1px solid #888;
+      color: #e3d8ba;
+      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .delete-btn {
+      background: none;
+      border: none;
+      color: rgba(253, 92, 92, 0.685);
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 0.5rem;
+    }
+
+    .cart-actions {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .order-btn,
+    .cancel-btn {
+      background: none;
+      border: 1px solid #888;
+      color: #e3d8ba;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .order-btn:hover,
+    .cancel-btn:hover,
+    .qty-btn:hover,
+    .delete-btn:hover {
+      background-color: #dfc75a22;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container cart-container">
+    <h1>Your basket</h1>
+
+    <!-- Article 1 -->
+    <div class="cart-item">
+      <span class="item-name">Articles ***</span>
+      <div class="item-controls">
+        <button class="qty-btn">-</button>
+        <span class="item-qty">1</span>
+        <button class="qty-btn">+</button>
+      </div>
+      <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="cart-item">
+      <span class="item-name">Colored Teeth</span>
+      <div class="item-controls">
+        <button class="qty-btn">-</button>
+        <span class="item-qty">2</span>
+        <button class="qty-btn">+</button>
+      </div>
+      <button class="delete-btn"><i class="fas fa-trash-alt"></i></button>
+    </div>
+
+    <!-- Actions -->
+    <div class="cart-actions">
+      <button class="order-btn">Order</button>
+      <button class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+
+</body>
+</html>
