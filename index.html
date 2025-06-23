@@ -6,10 +6,34 @@
 <title>The Art of Dark</title>
 
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
-body {
+html {
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  padding: 0;
+  overflow-x: hidden;     /* Empêche le scroll horizontal */
+  overflow-y: hidden;       /* Scroll vertical uniquement si besoin */
+  height: 100%;
+}
+.main {
+  flex: 1; /* Pour occuper l’espace entre header et footer */
+  display: flex;
+  flex-direction: row;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+font-family: Arial, sans-serif;
+font-weight: bold;
+font-style: italic;
   color: #cfc6b8;
   background: #0e0d0c url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
     background-attachment: fixed;
@@ -21,8 +45,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  text-align: center;
+  padding: 0rem;
+   text-align: center;
+   flex: 1;
 }
 
 body::before {
@@ -32,6 +57,7 @@ body::before {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 70%);
   z-index: -1;
   pointer-events: none;
+  
 }
 
 h1 {
@@ -83,6 +109,7 @@ p {
   color: #e5dfd2;
 }
 
+
 .site-footer {
   text-align: center;
   padding: 1rem;
@@ -133,20 +160,23 @@ p {
 </head>
 <body>
 
+  <main class="main-container">
+    <img class="logo" src="images/34H-uyH4.jpg" alt="The Art of Dark Crafting Logo">
 
-      <img src="images/34H-uyH4.jpg" alt="The Art of Dark Crafting Logo" class="logo" />
-  <p>Craft supplies for the dark at heart</p>
-<nav class="nav-links">
-  <a href="shop.html">Shop</a>
-  <a href="about.html">Inspiration</a>
-  <a href="contact.html">Events</a>
-</nav>
+    <p>CRAFT SUPPLIES FOR THE DARK HEART</p>
+    <div class="nav-links">
+       <a href="shop.html">Shop</a>
+      <a href="#">Inspiration</a>
+      <a href="#">Events</a>
+    </div>
+  </main>
 
 
 
-<footer class="site-footer">
-  © 2025 The Art of Dark — All rights reserved.
-</footer>
+
+  <footer class="site-footer">
+      © 2025 The Art of Dark — All rights reserved.
+  </footer>
 </body>
 
 </html>

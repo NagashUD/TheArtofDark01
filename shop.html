@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop – The Art of Dark</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
 
  body {
       margin: 0;
       background: #0e0d0c url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
-      font-family: 'Playfair Display', serif;
+
       color: #cfc6b8;
       min-height: 100vh;
       display: flex;
@@ -29,6 +29,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
 }
+*, *::before, *::after {
+  font-family: Arial, sans-serif !important;
+}
     header {
       background: rgba(0, 0, 0, 0.85);
       text-align: center;
@@ -39,6 +42,7 @@ body::before {
       color: #d3c693;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
       border-bottom: 1px solid #3c372d;
+        font-style: italic;
     }
 
     .nav-container {
@@ -71,7 +75,7 @@ body::before {
       flex-direction: row;
     }
 .sidebar {
-  width: 240px;
+  width: 260px;
   background: rgba(20, 18, 16, 0.85);
   padding: 2rem 1rem;
   display: flex;
@@ -95,6 +99,7 @@ body::before {
   padding: 1.5rem 0;
   border-right: none;
   border-bottom: 1px solid #3c372d;
+    font-weight: bold;
 }
 
   iframe {
@@ -103,11 +108,12 @@ body::before {
 }
     .sidebar a {
       color: #b7aa85;
-      font-size: 1rem;
+      font-size: 0.8rem;
       text-decoration: none;
       padding: 0.4rem 0;
       transition: color 0.3s ease;
        text-align: left;
+         font-weight: bold;
     }
 
     .sidebar a:hover {
@@ -124,9 +130,40 @@ body::before {
       .main {
         flex-direction: column;
       }
-
-    
+  
     }
+    .dropdown {
+  margin-top: 10px;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: #b7aa85;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  padding: 8px 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.dropdown-content a {
+  padding: 4px 0;
+  color: #b7aa85;
+  font-size: 0.9em;
+}
+
+.dropdown.open .dropdown-content {
+  display: flex;
+}
+
   </style>
 </head>
 <body>
@@ -140,13 +177,136 @@ body::before {
   </div>
 
   <div class="main">
-    <aside class="sidebar">
-      <a href="#" onclick="loadPage('jewelry_making.html')">Jewelry Making</a>
-      <a href="#" onclick="loadPage('textile_art.html')">Textile Arts</a>
-      <a href="#" onclick="loadItems('stickers')">Alphabet Stickers</a>
-      <a href="#" onclick="loadItems('paper')">Decorative Paper</a>
-      <a href="#" onclick="loadItems('hardware')">Victorian Hardware</a>
-    </aside>
+<aside class="sidebar">
+    <!-- LIENS SANS CATÉGORIE -->
+  <a href="#" onclick="loadItems('Molds')">Molds</a>
+  <a href="#" onclick="loadItems('3D_art')">3D Art</a>
+  <a href="#" onclick="loadItems('Wood')">Wood</a>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Baking ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Utensils')">Utensils</a>
+      <a href="#" onclick="loadItems('Baking_Pansbeads')">Baking Pans</a>
+      <a href="#" onclick="loadItems('Picks_liners_packaging')">Picks, Liners, & Packaging</a>
+      <!-- Ajoute d'autres sous-catégories ici -->
+    </div>
+  </div>
+
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Books ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Books')">Books</a>
+      <a href="#" onclick="loadItems('needles')">Bookmarks</a>
+      <a href="#" onclick="loadItems('Bookplates')">Bookplates</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Embellishments ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Miniatures')">Miniatures</a>
+      <a href="#" onclick="loadItems('Glitter_confetti')">Glitter & Confetti</a>
+      <a href="#" onclick="loadItems('Cabochons')">Cabochons</a>
+      <a href="#" onclick="loadItems('Washi_tape')">Washi Tape</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Floral ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Dried')">Dried</a>
+      <a href="#" onclick="loadItems('Artificial')">Artificial</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Greeting Cards & Correspondence ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Birthday')">Birthday</a>
+      <a href="#" onclick="loadItems('Thank_you')">Thank You</a>
+      <a href="#" onclick="loadItems('Holiday')">Holiday</a>
+      <a href="#" onclick="loadItems('Notecards')">Notecards</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Jewelry ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Beads')">Beads</a>
+      <a href="#" onclick="loadItems('Charms')">Charms</a>
+      <a href="#" onclick="loadItems('Blanks_findings')">Blanks & Findings</a>
+      <a href="#" onclick="loadItems('Finished_jewelry')">Finished Jewelry</a>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <button class="dropdown-btn">Journals & Writing ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Journals')">Journals</a>
+      <a href="#" onclick="loadItems('Pens_pencils')">Pens & Pencils</a>
+      <a href="#" onclick="loadItems('Molds')">Molds</a>
+    </div>
+  </div>
+
+      <div class="dropdown">
+    <button class="dropdown-btn">Needlecraft ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Embroidery')">Embroidery</a>
+      <a href="#" onclick="loadItems('Crochet')">Crochet</a>
+      <a href="#" onclick="loadItems('Scissors')">Scissors</a>
+      <a href="#" onclick="loadItems('Sewing_accessories')">Sewing Accessories</a>
+    </div>
+  </div>
+
+      <div class="dropdown">
+    <button class="dropdown-btn">Paper & Antique Ephemera ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Paper_antique_ephemera')">Paper & Antique Ephemera</a>
+      <a href="#" onclick="loadItems('Decorative_paper')">Decorative Paper</a>
+      <a href="#" onclick="loadItems('Antique_vintage_paper')">Antique & Vintage Paper</a>
+      <a href="#" onclick="loadItems('Antique_and_vintage_photos')">Antique and Vintage Photos</a>
+    </div>
+  </div>
+  
+    <div class="dropdown">
+    <button class="dropdown-btn">Stencils ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Lettering')">Lettering</a>
+      <a href="#" onclick="loadItems('Images')">Images</a>
+    </div>
+  </div>
+
+
+
+
+      <div class="dropdown">
+    <button class="dropdown-btn">Textiles ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Fabric')">Fabric</a>
+      <a href="#" onclick="loadItems('Trim')">Trim</a>
+      <a href="#" onclick="loadItems('Ribbon')">Ribbon</a>
+        <a href="#" onclick="loadItems('Patches')">Patches</a>
+    </div>
+  </div>
+
+   
+
+            <div class="dropdown">
+    <button class="dropdown-btn">Wax Seals ▾</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="loadItems('Seals')">Seals</a>
+      <a href="#" onclick="loadItems('Handles')">Handles</a>
+      <a href="#" onclick="loadItems('Sets')">Sets</a>
+        <a href="#" onclick="loadItems('Wax')">Wax</a>
+          <a href="#" onclick="loadItems('Spoons_furnaces')">Spoons & Furnaces</a>
+    </div>
+  </div>
+
+
+</aside>
+
 
     <div id="content">
       <p>Chargement du contenu...</p>
@@ -178,6 +338,12 @@ body::before {
 
     // Chargement initial
     loadPage('items_favorite.html');
+
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.parentElement.classList.toggle('open');
+  });
+});
   </script>
 
 
