@@ -323,7 +323,21 @@ body::before {
         })
         .catch(() => {
           document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
-        });
+        });function loadPage(page) {
+  const sidebar = document.querySelector('.sidebar');
+  fetch(page)
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('content').innerHTML = html;
+
+      // Si on est sur contact ou cart, on cache la sidebar
+      if (page.includes('contact') || page.includes('cart')) {
+        sidebar.style.display = 'none';
+      } else {
+        sidebar.style.display = 'flex'; // ou block, selon ton layout
+      }
+    });
+}
     }
 
     function loadItems(cat) {
