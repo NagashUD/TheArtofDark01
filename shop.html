@@ -47,8 +47,10 @@ body::before {
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
-      flex-wrap: wrap;
+    
       border-bottom: 1px solid #3c372d;
+        flex-wrap: nowrap;
+        
     }
 
     .nav-link {
@@ -56,6 +58,7 @@ body::before {
       font-size: 1.1rem;
       text-decoration: none;
       transition: color 0.3s ease;
+      white-space: nowrap;
     }
 
     .nav-link:hover {
@@ -77,9 +80,10 @@ body::before {
   border-right: 1px solid #3c372d;
 }
 @media (max-width: 768px) {
-  .main {
-    flex-direction: column;
+  .sidebar a {
+    text-align: left;
   }
+
 
 .sidebar {
   width: 100%;
@@ -103,6 +107,7 @@ body::before {
       text-decoration: none;
       padding: 0.4rem 0;
       transition: color 0.3s ease;
+       text-align: left;
     }
 
     .sidebar a:hover {
@@ -120,18 +125,7 @@ body::before {
         flex-direction: column;
       }
 
-      .sidebar {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        border-right: none;
-        border-bottom: 1px solid #3c372d;
-      }
-
-      #content {
-        padding: 1rem;
-      }
+    
     }
   </style>
 </head>
