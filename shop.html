@@ -166,7 +166,8 @@ body::before {
 }
 @media (max-width: 768px) {
   .sidebar {
-    display: grid;
+    width: 100%;
+   display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     justify-items: center;
     align-items: center;
@@ -179,11 +180,10 @@ body::before {
   }
 
   .sidebar a,
-  .sidebar .dropdown-btn {
-    font-size: 0.85rem;
+  .dropdown-btn {
+     font-size: 0.85rem;
     padding: 0.5rem 0.7rem;
     background: none;
-    border: 1px solid #3c372d;
     border-radius: 6px;
     color: #b7aa85;
     white-space: nowrap;
@@ -192,8 +192,13 @@ body::before {
     max-width: 140px;
   }
 
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
   .dropdown-content {
-    display: none !important; /* Cache les sous-catégories sur mobile pour éviter les scrolls infinis */
+ display: none !important;
   }
 }
   </style>
