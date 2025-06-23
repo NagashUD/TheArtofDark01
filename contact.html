@@ -129,7 +129,17 @@ button[type="submit"]:hover {
 .contact-wrapper {
   padding: 3rem 1rem;
 }
+.social-links a {
+  color: #bfae8b;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
 
+.social-links a:hover {
+  color: #e5dfd2;
+}
   </style>
 </head>
 <body>
@@ -142,7 +152,11 @@ button[type="submit"]:hover {
       <p><span>Email</span><a href="mailto:info@mysite.com" style="color: #e3d8ba; text-decoration: none;">info@mysite.com</a></p>
       <p><span>Phone</span>123-456-7890</p>
     </div>
-
+     <div class="social-links">
+    <a href="https://instagram.com/nom_du_profil" target="_blank">Instagram</a> |
+    <a href="https://facebook.com/nom_du_profil" target="_blank">Facebook</a> |
+    <a href="https://pinterest.com/nom_du_profil" target="_blank">Pinterest</a>
+  </div>
     <div class="subscribe-form">
       <p>Subscribe to receive updates & exclusive offers</p>
       <form onsubmit="event.preventDefault(); showThanks();" autocomplete="off">
@@ -151,6 +165,7 @@ button[type="submit"]:hover {
       </form>
       <p id="thanks-message" style="display: none; color: #c8bca3; margin-top: 1rem;">Thanks for submitting!</p>
     </div>
+   
   </main>
   
 </body>
