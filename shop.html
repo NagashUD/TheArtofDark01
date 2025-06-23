@@ -172,19 +172,20 @@ body::before {
   .sidebar {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.8rem;
     justify-items: center;
-    align-items: start;
     padding: 1rem;
-    margin-top: 0;
-    border-bottom: 1px solid #3c372d;
-    order: 0; /* 🠔 repositionne au-dessus du contenu */
+    margin-top: 2rem;
+    border-top: 1px solid #3c372d;
+    border-bottom: none;
+    order: 2; /* 🠔 place la sidebar APRÈS le contenu */
     background: rgba(20, 18, 16, 0.9);
   }
 
   #content {
-    padding: 1.2rem;
+    order: 1;
+    padding: 1.5rem;
   }
 
   .dropdown {
