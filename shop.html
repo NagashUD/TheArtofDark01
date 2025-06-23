@@ -315,50 +315,51 @@ body::before {
   </div>
 
   <script>
-    function loadPage(page) {
-      fetch(page)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('content').innerHTML = html;
-        })
-        .catch(() => {
-          document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
-        });function loadPage(page) {
-  const sidebar = document.querySelector('.sidebar');
-  fetch(page)
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById('content').innerHTML = html;
+  function loadPage(page) {
+    const sidebar = document.querySelector('.sidebar');
 
-      // Si on est sur contact ou cart, on cache la sidebar
-      if (page.includes('contact') || page.includes('cart')) {
-        sidebar.style.display = 'none';
-      } else {
-        sidebar.style.display = 'flex'; // ou block, selon ton layout
-      }
+    fetch(page)
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('content').innerHTML = html;
+
+        // Masquer la sidebar sur les pages spécifiques
+        if (page.includes('contact') || page.includes('cart')) {
+          sidebar.style.display = 'none';
+        } else {
+          sidebar.style.display = 'flex'; // Re-affiche pour les autres
+        }
+      })
+      .catch(() => {
+        document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
+      });
+  }
+
+  function loadItems(cat) {
+    const sidebar = document.querySelector('.sidebar');
+
+    fetch(`items.html?cat=${cat}`)
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('content').innerHTML = html;
+
+        // On s'assure que la sidebar reste visible
+        sidebar.style.display = 'flex';
+      })
+      .catch(() => {
+        document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
+      });
+  }
+
+  // Chargement initial
+  loadPage('items_favorite.html');
+
+  // Gestion de l’ouverture des dropdowns
+  document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('open');
     });
-}
-    }
-
-    function loadItems(cat) {
-      fetch(`items.html?cat=${cat}`)
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('content').innerHTML = html;
-        })
-        .catch(() => {
-          document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
-        });
-    }
-
-    // Chargement initial
-    loadPage('items_favorite.html');
-
-    document.querySelectorAll('.dropdown-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.parentElement.classList.toggle('open');
   });
-});
   </script>
 
 
