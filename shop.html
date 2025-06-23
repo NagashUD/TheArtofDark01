@@ -167,29 +167,24 @@ body::before {
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
-   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 0.6rem 1rem;
-    width: 100%;
+    gap: 0.8rem;
     padding: 1rem;
-    background: rgba(20, 18, 16, 0.85);
     border: none;
-    text-align: center;
+    background: rgba(20, 18, 16, 0.85);
+    order: 1; /* pour forcer à s'afficher juste après la nav */
+    
   }
 
   .sidebar a,
   .dropdown-btn {
-     font-size: 0.85rem;
-    padding: 0.5rem 0.7rem;
-    background: none;
-    border-radius: 6px;
-    color: #b7aa85;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
     white-space: nowrap;
-    text-align: center;
-    width: 100%;
-    max-width: 140px;
   }
 
   .dropdown {
@@ -198,7 +193,13 @@ body::before {
   }
 
   .dropdown-content {
- display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(20, 18, 16, 0.95);
+    z-index: 99;
+    border: 1px solid #3c372d;
+    padding: 0.5rem;
   }
 }
   </style>
