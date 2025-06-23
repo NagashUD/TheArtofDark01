@@ -164,7 +164,43 @@ body::before {
 .dropdown.open .dropdown-content {
   display: flex;
 }
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border: none;
+    background: rgba(20, 18, 16, 0.85);
+    order: 1; /* pour forcer à s'afficher juste après la nav */
+  }
 
+  .sidebar a,
+  .dropdown-btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(20, 18, 16, 0.95);
+    z-index: 99;
+    border: 1px solid #3c372d;
+    padding: 0.5rem;
+  }
+}
   </style>
 </head>
 <body>
