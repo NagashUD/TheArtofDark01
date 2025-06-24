@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration - The Art of Dark</title>
+  <style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  color: #cfc6b8;
+  background: #0e0d0c url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.85) 70%);
+  z-index: -1;
+  pointer-events: none;
+  
+}
+    .events-container {
+      padding: 2rem 1rem;
+    }
+
+    .events-title {
+      text-align: left;
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #d3c693;
+      text-shadow: 0 0 5px #000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .event-gallery {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 2rem;
+    }
+
+    .event-gallery img {
+      height: 300px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .event-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(13, 10, 6, 0.9);
+  color: #bfae8b;
+  font-size: 0.9rem;
+  border-top: 1px solid #3e362a;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
+width: 100%;
+  display: flex;
+  flex-direction: column; /* empile les enfants verticalement */
+  align-items: center;    /* centre horizontalement */
+  gap: 0.5rem;            /* un petit espace entre les éléments */
+}
+.social-links a {
+  color: #bfae8b;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #e5dfd2;
+}
+h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 0.2em;
+  color: #d3c693;
+  text-shadow: 0 0 5px #000;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 650px;
+  margin-bottom: 2rem;
+  color: #e5dfd2;
+  text-shadow: 0 0 3px #000;
+
+}
+@media (max-width: 600px) {
+  body {
+    padding: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .logo {
+    max-width: 280px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+
+  .site-footer {
+    font-size: 0.8rem;
+    padding: 0.8rem 0.5rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <main class="main-container events-container">
+    <h1 class="events-title">Inspiration</h1>
+    <div class="event-gallery">
+      <img src="images/event1.jpg" alt="Event 1" onclick="openLightbox(this.src)">
+      <img src="images/event2.jpg" alt="Event 2" onclick="openLightbox(this.src)">
+      <img src="images/event3.jpg" alt="Event 3" onclick="openLightbox(this.src)">
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="large view">
+  </div>
+
+  <footer class="site-footer">
+     <p>© 2025 The Art of Dark — All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
