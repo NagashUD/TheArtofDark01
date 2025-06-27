@@ -141,7 +141,12 @@ h1 {
   margin-top: auto;
 }
 .products {
-  padding-bottom: 3rem; /* 👈 pour éviter que la dernière card soit collée en bas */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* 👈 ici on garantit un vrai espacement vertical */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
 }
 @media screen and (max-width: 768px) {
   .card {
