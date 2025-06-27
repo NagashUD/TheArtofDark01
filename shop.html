@@ -283,9 +283,9 @@ body::before {
     <div class="dropdown">
     <button class="dropdown-btn">Journals & Writing ▾</button>
     <div class="dropdown-content">
-      <a href="#" onclick="loadItems('Journals')">Journals</a>
-      <a href="#" onclick="loadItems('Pens_pencils')">Pens & Pencils</a>
-      <a href="#" onclick="loadItems('Molds')">Molds</a>
+   <a href="#" onclick="loadItems('journals.html', true)">Journals</a>
+<a href="#" onclick="loadItems('pens_pencils.html', true)">Pens & Pencils</a>
+<a href="#" onclick="loadItems('molds.html', true)">Molds</a>
     </div>
   </div>
 
@@ -317,9 +317,6 @@ body::before {
     </div>
   </div>
 
-
-
-
       <div class="dropdown">
     <button class="dropdown-btn">Textiles ▾</button>
     <div class="dropdown-content">
@@ -329,8 +326,6 @@ body::before {
         <a href="#" onclick="loadItems('Patches')">Patches</a>
     </div>
   </div>
-
-   
 
             <div class="dropdown">
     <button class="dropdown-btn">Wax Seals ▾</button>
@@ -342,10 +337,7 @@ body::before {
           <a href="#" onclick="loadItems('Spoons_furnaces')">Spoons & Furnaces</a>
     </div>
   </div>
-
-
 </aside>
-
 
     <div id="content">
       <p>Chargement du contenu...</p>
@@ -373,21 +365,21 @@ body::before {
       });
   }
 
-  function loadItems(cat) {
-    const sidebar = document.querySelector('.sidebar');
+function loadItems(pageOrCat, isPage = false) {
+  const sidebar = document.querySelector('.sidebar');
+  const target = isPage ? pageOrCat : `items.html?cat=${pageOrCat}`;
 
-    fetch(`items.html?cat=${cat}`)
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('content').innerHTML = html;
+  fetch(target)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('content').innerHTML = html;
+      sidebar.style.display = 'flex';
+    })
+    .catch(() => {
+      document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
+    });
+}
 
-        // On s'assure que la sidebar reste visible
-        sidebar.style.display = 'flex';
-      })
-      .catch(() => {
-        document.getElementById('content').innerHTML = "<p>Erreur de chargement du contenu.</p>";
-      });
-  }
 
   // Chargement initial
   loadPage('items_favorite.html');

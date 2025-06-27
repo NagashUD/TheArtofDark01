@@ -1,0 +1,194 @@
+  <title>The Art of Dark – Journals</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+
+body {
+
+ 
+  background: #0e0d0c url('images/bg_b_n_w.jpg') center/cover no-repeat fixed;
+  color: #dfc75a;
+  font-family: 'Playfair Display', serif;
+    background-attachment: fixed;
+      background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(12, 11, 10, 0.3), rgba(10, 9, 8, 0.85));
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #dfc75a;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(28, 26, 23, 0.88);
+  border: 1px solid #3c372d;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 0 10px #0004;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 14px #1f1c17;
+}
+
+.card img {
+  width: 100%;
+  max-height: 200px;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 6px #0006;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: #e3d8ba;
+    text-align: center;
+  margin: 0.4rem 0;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #b6ad9a;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #d3c693;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid #b7aa85;
+  color: #b7aa85;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #b7aa85;
+  color: #1a1815;
+}
+.img-wrapper {
+  background: #1a1a1a;
+  padding: 8px;
+  border-radius: 4px;
+}
+.img-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.card {
+  height: 100%;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: 100%;
+    text-align: center;
+     margin-top: auto;
+}
+
+.card .btn {
+  margin-top: auto;
+}
+  </style>
+
+
+  <h1>JOURNALS</h1>
+
+  <section class="products">
+    <article class="card">
+      <div class="img-wrapper">
+      <img src="images/eyes_journals.png" alt="Eyes" />
+      </div>
+      <h2>Eye Portrait </h2>
+         <h2> Mini Journal</h2>
+      <p>Let fate choose the gaze that guards your thoughts.</p>
+        <p></p>
+      <div class="card-content">
+      <div class="price">$5.00</div>
+      </div>
+      <button class="btn">Add to cart</button>
+    </article>
+
+    
+    <article class="card">
+       <div class="img-wrapper">
+      <img src="images/mushrooms_journals.png" alt="Gothic Alphabet Stickers" />
+      </div>
+      <h2>Mushrooms </h2>
+       <h2> Mini Journal</h2>
+      <p>A whimsical forest companion to collect your thoughts and secrets.</p>
+          <div class="card-content">
+      <div class="price">$5.00</div>
+      </div>
+      <button class="btn">Add to cart</button>
+    </article>
+
+    <article class="card">
+ <div class="img-wrapper">
+      <img src="images/owls_journals.png" alt="Rusty Nibs" />
+      </div>
+      <h2>Owl </h2>
+      <h2>  Mini Journal</h2>
+      <p>Vintage-inspired notebooks for your wisdom, dreams, and midnight thoughts.</p>
+       <div class="card-content">
+      <div class="price">$5.00</div>
+      </div>
+      <button class="btn">Add to cart</button>
+    </article>
+
+    <article class="card">
+       <div class="img-wrapper">
+      <img src="images/parchment_journals.png" alt="Gothic Rose Fabric" />
+      </div>
+      <h2>Parchment</h2>
+      <h2>Mini Journal</h2>
+      <p>Aged like ancient scrolls, perfect for spells, sketches, and secret recipes.</p>
+       <div class="card-content">
+      <div class="price">$5.00</div>
+      </div>
+      <button class="btn">Add to cart</button>
+    </article>
+  </section>
+
+</html>
