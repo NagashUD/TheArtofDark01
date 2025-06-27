@@ -14,7 +14,11 @@ body {
   background-repeat: no-repeat;
    
 }
-
+@media screen and (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
 body::before {
   content: "";
   position: fixed;
@@ -136,6 +140,15 @@ h1 {
 .card .btn {
   margin-top: auto;
 }
+.products {
+  padding-bottom: 3rem; /* 👈 pour éviter que la dernière card soit collée en bas */
+}
+@media screen and (max-width: 768px) {
+  .card {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
   </style>
 
 
