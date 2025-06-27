@@ -14,11 +14,7 @@ body {
   background-repeat: no-repeat;
    
 }
-@media screen and (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
-}
+
 body::before {
   content: "";
   position: fixed;
@@ -55,17 +51,11 @@ h1 {
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 1.5rem;
 }
 
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 14px #1f1c17;
-}
-@media screen and (max-width: 768px) {
-  .card {
-    margin-bottom: 1.5rem;
-  }
 }
 
 .card img {
@@ -141,19 +131,22 @@ h1 {
   margin-top: auto;
 }
 .products {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* 👈 ici on garantit un vrai espacement vertical */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem; /* vertical ET horizontal */
   max-width: 1200px;
   margin: 0 auto;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 @media screen and (max-width: 768px) {
+  .products {
+    padding: 0 1rem 4rem;
+  }
+
   .card {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 2rem;
   }
 }
-
   </style>
 
 
